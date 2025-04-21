@@ -1,0 +1,36 @@
+{
+  "files": {
+    "main.css": "/my-react-project/static/css/main.5e98f8da.css",
+    "main.js": "/my-react-project/static/js/main.bfdf24f2.js",
+    "static/js/453.be4212d4.chunk.js": "/my-react-project/static/js/453.be4212d4.chunk.js",
+    "static/media/gallery01.jpg": "/my-react-project/static/media/gallery01.34222bcfa484e55ccfdb.jpg",
+    "static/media/gallery02.jpg": "/my-react-project/static/media/gallery02.22bba011514b744beac4.jpg",
+    "static/media/gallery03.jpg": "/my-react-project/static/media/gallery03.5aaf5d324807e0fb0465.jpg",
+    "static/media/PGP.jpg": "/my-react-project/static/media/PGP.ee8819446cc01049ec81.jpg",
+    "static/media/image02.png": "/my-react-project/static/media/image02.bc726e7197ec76460dd1.png",
+    "static/media/image01.png": "/my-react-project/static/media/image01.b185dabfdc0dac356b35.png",
+    "static/media/gallery10.jpg": "/my-react-project/static/media/gallery10.1b00a6e3ddbe43873c71.jpg",
+    "static/media/gallery05.jpg": "/my-react-project/static/media/gallery05.07351b3d81b500937b18.jpg",
+    "static/media/gallery06.jpg": "/my-react-project/static/media/gallery06.badcbca850020671e7c0.jpg",
+    "static/media/gallery08.jpg": "/my-react-project/static/media/gallery08.e1ecd3c16447d586e88a.jpg",
+    "static/media/image04.jpg": "/my-react-project/static/media/image04.620bb6a22e1258cae586.jpg",
+    "static/media/gallery04.jpg": "/my-react-project/static/media/gallery04.216908515a826f2e486a.jpg",
+    "static/media/about-image.jpg": "/my-react-project/static/media/about-image.4350ab079d40b8032b42.jpg",
+    "static/media/image03.jpg": "/my-react-project/static/media/image03.6372139cb4b4d537795b.jpg",
+    "static/media/gallery07.jpg": "/my-react-project/static/media/gallery07.4475b8d7d3591f851249.jpg",
+    "static/media/gallery09.jpg": "/my-react-project/static/media/gallery09.c62b7c25c9e2f36b6ff0.jpg",
+    "static/media/ultra-tech-cement.png": "/my-react-project/static/media/ultra-tech-cement.753c82c47aa7d3e84c3e.png",
+    "static/media/main-logo.png": "/my-react-project/static/media/main-logo.05fa193dff13f22d9e02.png",
+    "static/media/MEIL.jpg": "/my-react-project/static/media/MEIL.b36e3fe8a329d67872d1.jpg",
+    "static/media/Hindustan.png": "/my-react-project/static/media/Hindustan.094d2fbe8257027105c5.png",
+    "static/media/NNI.jpg": "/my-react-project/static/media/NNI.8237b0eebd27262dea14.jpg",
+    "index.html": "/my-react-project/index.html",
+    "main.5e98f8da.css.map": "/my-react-project/static/css/main.5e98f8da.css.map",
+    "main.bfdf24f2.js.map": "/my-react-project/static/js/main.bfdf24f2.js.map",
+    "453.be4212d4.chunk.js.map": "/my-react-project/static/js/453.be4212d4.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5e98f8da.css",
+    "static/js/main.bfdf24f2.js"
+  ]
+}
