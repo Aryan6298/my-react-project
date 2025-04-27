@@ -82,10 +82,7 @@ const NavigationBar = () => {
             </NavLink>
           </Nav>
 
-          {/* Right side - Message */}
-          <div style={messageStyle}>
-            We Are Environment Friendly...
-          </div>
+          
         </Container>
       </Navbar>
     </>

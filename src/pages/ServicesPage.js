@@ -32,28 +32,40 @@ import portfolio10 from "../assets/gallery01.jpg";
 import portfolio11 from "../assets/about-image.jpg";
 import portfolio12 from "../assets/image03.jpg";
 
+// Components
 import TopBar from "../components/TopBar.js";
-import NavigationBar from "../components/Navbar"
+import NavigationBar from "../components/Navbar.js";
 import Footer from "../components/Footer.js";
-
 
 const Services = () => {
   useEffect(() => {
     AOS.init({ duration: 1000 });
   }, []);
 
-  const clientsProjects = [
-    { name: "M/s PGP Glass Private Limited", project: "Hydrogeological Investigation, Water Assessment, Impact Assessment Study" },
-    { name: "M/s Ultratech Cement Unit Dhar", project: "Rain Water Harvesting, Piezometer, Recharge Calculation and Study" },
-    { name: "M/s Agro Solvent Product Pvt. Ltd", project: "Impact Assessment Study and Water Audit" },
-    { name: "M/s Sun Nutra Foods", project: "Impact Assessment Study and Hydrogeological Investigation for Water Awards" },
-    { name: "M/s Hindustan Unilever Limited", project: "Geophysical Investigation, Aquifer Geometry, Aquifer Performance Test, Soil Testing and Percolation Test" },
-    { name: "Oil (Confederation of Indian Industries)", project: "Geophysical Survey at Jawaharlal Nehru Research Institute" },
-    { name: "Megha Engineering & Infrastructures Limited", project: "Geophysical and Recharge Structure in Jihadibaroda Village" },
-    { name: "Dabur India Limited", project: "CGWA NOC" },
-    { name: "IMA-PG India Pvt. Ltd.", project: "Rain Water Harvesting" },
-    { name: "Meil", project: "Geophysical Survey" },
-    { name: "Indore Municipal Corporation", project: "Geophysical Survey" }
+  const clientsList = [
+    "Piramal Glass Private Limited (PGP Glass)",
+    "Ultratech Cement Unit Dhar",
+    "Agro Solvent Products Private Limited",
+    "Hindustan Unilever Limited",
+    "Confederation of Indian Industry (CII)",
+    "Megha Engineering & Infrastructures Limited (MEIL)",
+    "Dabur India Limited",
+    "IMA-PG India Private Limited",
+    "Indore Municipal Corporation (IMC)",
+    "Sun Nutrafoods Private Limited"
+  ];
+
+  const projectsList = [
+    "Hydrogeological Investigation and Impact Assessment Study",
+    "Rainwater Harvesting and Recharge Study",
+    "Water Impact Assessment and Audit",
+    "Aquifer Performance Test, Soil Testing, and Geophysical Survey",
+    "Survey at Jawaharlal Nehru Research Institute",
+    "Recharge Structure Design",
+    "Groundwater Clearance (CGWA NOC)",
+    "Rainwater Harvesting System Installation",
+    "Geophysical Survey for Water Resource Assessment",
+    "Hydrogeological Investigation for Water Awards"
   ];
 
   const portfolioItems = [
@@ -81,7 +93,8 @@ const Services = () => {
   return (
     <>
       <TopBar />
-      <NavigationBar/>
+      <NavigationBar />
+
       <div className="container my-5">
         <style>{`
           .section-title {
@@ -132,43 +145,75 @@ const Services = () => {
           .portfolio-item:hover .portfolio-caption {
             color: #0d6efd;
           }
+
+          .portfolio-number {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #1f2a44;
+            margin-right: 10px;
+          }
         `}</style>
 
         <h2 className="section-title" data-aos="fade-down">Clients & Projects</h2>
 
+        {/* Clients Table */}
         <div className="table-responsive mb-5" data-aos="fade-up">
+          <h3 className="text-center mb-3" style={{ color: "#1f2a44", fontWeight: "600" }}>Clients</h3>
           <table className="table table-bordered table-hover shadow-sm">
-            <thead className="table-dark">
+            <thead className="table-primary">
               <tr>
                 <th>#</th>
                 <th>Client Name</th>
-                <th>Project Undertaken</th>
               </tr>
             </thead>
             <tbody>
-              {clientsProjects.map((entry, index) => (
+              {clientsList.map((client, index) => (
                 <tr key={index}>
                   <td>{index + 1}</td>
-                  <td>{entry.name}</td>
-                  <td>{entry.project}</td>
+                  <td>{client}</td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
 
+        {/* Projects Table */}
+        <div className="table-responsive mb-5" data-aos="fade-up">
+          <h3 className="text-center mb-3" style={{ color: "#1f2a44", fontWeight: "600" }}>Projects Undertaken</h3>
+          <table className="table table-bordered table-hover shadow-sm">
+            <thead className="table-success">
+              <tr>
+                <th>#</th>
+                <th>Project Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              {projectsList.map((project, index) => (
+                <tr key={index}>
+                  <td>{index + 1}</td>
+                  <td>{project}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        {/* Project Portfolio Section */}
         <div className="mb-5" data-aos="fade-up">
           <h3 className="text-center mb-4" style={{ color: "#1f2a44", fontWeight: "600" }}>Project Portfolio</h3>
           <div className="row">
             {portfolioItems.map((item, index) => (
               <div key={index} className="col-md-4 mb-4 d-flex flex-column align-items-center portfolio-item" data-aos="fade-up" data-aos-delay={index * 100}>
                 <img src={item.image} alt={item.title} className="img-fluid" />
-                <div className="portfolio-caption">{item.title}</div>
+                <div className="portfolio-caption">
+                  <span className="portfolio-number">{index + 1}.</span>{item.title}
+                </div>
               </div>
             ))}
           </div>
         </div>
 
+        {/* Trusted By - Marquee */}
         <div className="my-5 py-5 px-3 rounded" style={{ backgroundColor: "#f0f4f9" }} data-aos="zoom-in">
           <h3 className="text-center mb-4" style={{ color: "#1f2a44", fontWeight: "600" }}>Trusted By</h3>
           <Marquee gradient={false} speed={50} pauseOnHover={true}>
@@ -178,7 +223,8 @@ const Services = () => {
           </Marquee>
         </div>
       </div>
-      <Footer/>
+
+      <Footer />
     </>
   );
 };
