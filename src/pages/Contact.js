@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Container, Row, Col, Form, Button, Card } from 'react-bootstrap';
+import { Container, Row, Col, Card } from 'react-bootstrap';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import TopBar from '../components/TopBar';
@@ -9,13 +9,8 @@ import { FaMapMarkerAlt, FaEnvelope, FaPhoneAlt } from 'react-icons/fa';
 
 const ContactPage = () => {
   useEffect(() => {
-    AOS.init({ duration: 1000 });
+    AOS.init({ duration: 1200 });
   }, []);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Form submission logic here
-  };
 
   return (
     <>
@@ -25,107 +20,139 @@ const ContactPage = () => {
       <style>{`
         .contact-heading {
           font-weight: 700;
-          font-size: 2.5rem;
+          font-size: 3rem;
           color: #1f2a44;
+          text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+          transition: color 0.3s ease;
         }
 
-        .form-control {
-          border-radius: 10px;
-          transition: all 0.3s ease;
-        }
-
-        .form-control:focus {
-          border-color: #0d6efd;
-          box-shadow: 0 0 8px rgba(13, 110, 253, 0.3);
-        }
-
-        .submit-button {
-          transition: transform 0.3s ease, background-color 0.3s ease;
-        }
-
-        .submit-button:hover {
-          transform: scale(1.05);
-          background-color: #0b5ed7;
+        .contact-heading:hover {
+          color: #0d6efd;
         }
 
         .contact-card {
-          border-radius: 15px;
-          transition: all 0.3s ease-in-out;
+          border-radius: 20px;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+          transition: all 0.4s ease-in-out;
         }
 
         .contact-card:hover {
-          box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-          transform: translateY(-5px);
+          box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+          transform: translateY(-8px);
         }
 
         .contact-icon {
-          margin-right: 8px;
+          margin-right: 10px;
           color: #0d6efd;
+          transition: color 0.3s ease;
+        }
+
+        .contact-icon:hover {
+          color: #0056b3;
+        }
+
+        .contact-info-item {
+          opacity: 0;
+          transform: translateY(20px);
+          transition: all 0.6s ease-out;
+        }
+
+        .contact-info-item.visible {
+          opacity: 1;
+          transform: translateY(0);
+        }
+
+        .contact-info-item-delay {
+          transition-delay: 0.3s;
+        }
+
+        .contact-card-body {
+          background-color: #f8f9fa;
+          padding: 30px;
+          border-radius: 20px;
+          text-align: center;
+        }
+
+        .lead {
+          font-size: 1.25rem;
+          font-weight: 400;
+          color: #6c757d;
+          margin-bottom: 30px;
+        }
+
+        .contact-info {
+          background-color: #ffffff;
+          padding: 20px;
+          border-radius: 15px;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+          transition: all 0.3s ease-in-out;
+        }
+
+        .contact-info:hover {
+          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
         }
       `}</style>
 
       <Container className="my-5">
         <h1 className="text-center contact-heading mb-4" data-aos="fade-down">
-          Have Questions? Drop A Line
+          Get In Touch
         </h1>
         <p className="text-muted text-center mb-5" data-aos="fade-up">
-          Your email address will not be published. Required fields are marked *
+          We are here to assist you. Feel free to reach out anytime!
         </p>
 
-        <Row>
-          {/* Contact Form */}
-          <Col md={8} data-aos="fade-right">
-            <Form onSubmit={handleSubmit} className="shadow p-4 rounded bg-light">
-              <Form.Group className="mb-4" controlId="formName">
-                <Form.Label>Complete Name *</Form.Label>
-                <Form.Control type="text" required placeholder="Enter your name" />
-              </Form.Group>
-
-              <Form.Group className="mb-4" controlId="formEmail">
-                <Form.Label>Email Address *</Form.Label>
-                <Form.Control type="email" required placeholder="Enter your email" />
-              </Form.Group>
-
-              <Form.Group className="mb-4" controlId="formSubject">
-                <Form.Label>Subject *</Form.Label>
-                <Form.Control type="text" required placeholder="Enter subject" />
-              </Form.Group>
-
-              <Form.Group className="mb-4" controlId="formDescription">
-                <Form.Label>Description *</Form.Label>
-                <Form.Control as="textarea" rows={4} required placeholder="Write your message here..." />
-              </Form.Group>
-
-              <div className="d-grid">
-                <Button variant="primary" type="submit" size="lg" className="submit-button">
-                  Submit Now
-                </Button>
-              </div>
-            </Form>
-          </Col>
-
+        <Row className="justify-content-center">
           {/* Contact Info */}
-          <Col md={4} className="mt-5 mt-md-0" data-aos="fade-left">
-            <Card className="h-100 shadow-sm contact-card bg-white p-3">
-              <Card.Body>
-                <h3 className="mb-4 text-primary">Get In Touch</h3>
-                <p className="lead">We are at your disposal 7 days a week!</p>
+          <Col md={6} data-aos="fade-up">
+            <Card className="contact-card bg-white">
+              <Card.Body className="contact-card-body">
+                <h3 className="text-primary mb-4">Contact Information</h3>
+                <p className="lead">We are available 7 days a week!</p>
 
-                <div className="mt-4">
-                  <h6><FaMapMarkerAlt className="contact-icon" /> Address</h6>
-                  <p className="text-muted mb-3">
-                    84, Nanda Nagar<br />
-                    Indore - 452011
-                  </p>
+                <div className="contact-info mt-4">
+                  <div
+                    className="contact-info-item"
+                    data-aos="fade-up"
+                    data-aos-delay="100"
+                  >
+                    <h6>
+                      <FaMapMarkerAlt className="contact-icon" /> Address
+                    </h6>
+                    <p className="text-muted mb-3">
+                    84/3, NEAR KANKESHWARI INFOTECH GATE, NANDA NAGAR,
+                    INDORE, Indore, Madhya Pradesh, 452019.
+                    </p>
+                  </div>
 
-                  <h6><FaEnvelope className="contact-icon" /> Mail ID</h6>
-                  <p className="text-muted mb-3">servicesgeocon@gmail.com</p>
+                  <div
+                    className="contact-info-item contact-info-item-delay"
+                    data-aos="fade-up"
+                    data-aos-delay="300"
+                  >
+                    <h6>
+                      <FaEnvelope className="contact-icon" /> Mail ID
+                    </h6>
+                    <p className="text-muted mb-3">
+                      <a href="mailto:servicesgeocon@gmail.com">
+                        servicesgeocon@gmail.com
+                      </a>
+                    </p>
+                  </div>
 
-                  <h6><FaPhoneAlt className="contact-icon" /> Phone</h6>
-                  <p className="text-muted">
-                    +91 9827788586<br />
-                    9039363465
-                  </p>
+                  <div
+                    className="contact-info-item contact-info-item-delay"
+                    data-aos="fade-up"
+                    data-aos-delay="500"
+                  >
+                    <h6>
+                      <FaPhoneAlt className="contact-icon" /> Phone
+                    </h6>
+                    <p className="text-muted">
+  <div><a href="tel:+919827788586">+91 9827788586</a></div>
+  <div><a href="tel:+919039363465">+91 9039363465</a></div>
+</p>
+
+                  </div>
                 </div>
               </Card.Body>
             </Card>

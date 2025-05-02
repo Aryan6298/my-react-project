@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 import Marquee from "react-fast-marquee";
 import AOS from "aos";
 import 'aos/dist/aos.css';
@@ -31,6 +32,12 @@ import portfolio9 from "../assets/gallery02.jpg";
 import portfolio10 from "../assets/gallery01.jpg";
 import portfolio11 from "../assets/about-image.jpg";
 import portfolio12 from "../assets/image03.jpg";
+import portfolio13 from "../assets/gallery11.jpg";
+import portfolio14 from "../assets/gallery12.jpg";
+import portfolio15 from "../assets/gallery13.jpg";
+import portfolio16 from "../assets/gallery14.jpg";
+import portfolio17 from "../assets/gallery15.jpg";
+import portfolio18 from "../assets/gallery16.jpg";
 
 // Components
 import TopBar from "../components/TopBar.js";
@@ -69,26 +76,25 @@ const Services = () => {
   ];
 
   const portfolioItems = [
-    { image: portfolio1, title: "Rainwater Harvesting System" },
-    { image: portfolio2, title: "Geophysical Survey at JNRI" },
-    { image: portfolio3, title: "Aquifer Recharge Structure" },
-    { image: portfolio4, title: "Aquifer Recharge Structure" },
-    { image: portfolio5, title: "Aquifer Recharge Structure" },
-    { image: portfolio6, title: "Aquifer Recharge Structure" },
-    { image: portfolio7, title: "Aquifer Recharge Structure" },
-    { image: portfolio8, title: "Aquifer Recharge Structure" },
-    { image: portfolio9, title: "Aquifer Recharge Structure" },
-    { image: portfolio10, title: "Aquifer Recharge Structure" },
-    { image: portfolio11, title: "Aquifer Recharge Structure" },
-    { image: portfolio12, title: "Aquifer Recharge Structure" },
+    { image: portfolio1, title: "Resistivity Survey", link: "/pic1" },
+    { image: portfolio2, title: "Borehole Camera /Borehole Logging", link: "/pic2" },
+    { image: portfolio3, title: "Monitoring Equipment in Aquifer Recharge Structure", link: "/pic3" },
+    { image: portfolio4, title: "Structural Assessment of Ancient Water Retaining Walls", link: "/pic4" },
+    { image: portfolio5, title: "Hydrogeological Survey", link: "/pic5" },
+    { image: portfolio6, title: "Groundwater Survey", link: "/pic6" },
+    { image: portfolio7, title: "Recharge Structure with Flow Meter for Monitoring", link: "/pic7" },
+    { image: portfolio8, title: "Groundwater Storage Tank for Community Recharge", link: "/pic8" },
+    { image: portfolio9, title: "Building-Integrated Recharge Piping System", link: "/pic9" },
+    { image: portfolio10, title: "Wall-Mounted Aquifer Injection Setup", link: "/pic10" },
+    { image: portfolio11, title: "Artificial Recharge Strctures Construction", link: "/pic11" },
+    { image: portfolio12, title: "Borewell Site Selection", link: "/pic12" },
+    { image: portfolio13, title: "Existing Borewell Inspection", link: "/pic13" },
+    { image: portfolio14, title: "Geophysical Survey Using Resistivity Meter", link: "/pic14" },
+    { image: portfolio15, title: "Drilling Rig Setup for Borewell Installation", link: "/pic15" },
+    { image: portfolio16, title: "GPS-based Groundwater Survey with Data Logging", link: "/pic16" },
+    { image: portfolio17, title: "Installed Borewell Monitoring and Flow Meter System", link: "/pic17" },
+    { image: portfolio18, title: "Borewell Drilling Operation Supervision", link: "/pic18" },
   ];
-
-  const logoStyle = {
-    height: "120px",
-    margin: "0 40px",
-    objectFit: "contain",
-    transition: "transform 0.4s ease",
-  };
 
   return (
     <>
@@ -120,12 +126,19 @@ const Services = () => {
             transform: scale(1.1);
           }
 
+          .portfolio-item {
+            width: 100%;
+            max-width: 300px;
+            text-align: center;
+          }
+
           .portfolio-item img {
-            width: 300px;
+            display: block;
+            margin: 0 auto;
+            width: 100%;
             height: 200px;
             object-fit: cover;
-            border-radius: 10px;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+            border-radius: 12px;
             transition: transform 0.4s ease, box-shadow 0.4s ease;
           }
 
@@ -139,7 +152,6 @@ const Services = () => {
             font-weight: 600;
             color: #1f2a44;
             transition: color 0.3s ease;
-            text-align: center;
           }
 
           .portfolio-item:hover .portfolio-caption {
@@ -201,24 +213,40 @@ const Services = () => {
         {/* Project Portfolio Section */}
         <div className="mb-5" data-aos="fade-up">
           <h3 className="text-center mb-4" style={{ color: "#1f2a44", fontWeight: "600" }}>Project Portfolio</h3>
-          <div className="row">
+          <div className="row justify-content-center">
             {portfolioItems.map((item, index) => (
-              <div key={index} className="col-md-4 mb-4 d-flex flex-column align-items-center portfolio-item" data-aos="fade-up" data-aos-delay={index * 100}>
-                <img src={item.image} alt={item.title} className="img-fluid" />
-                <div className="portfolio-caption">
-                  <span className="portfolio-number">{index + 1}.</span>{item.title}
+              <div key={index} className="col-sm-6 col-md-4 col-lg-3 mb-4 d-flex justify-content-center" data-aos="fade-up" data-aos-delay={index * 100}>
+                <div className="portfolio-item">
+                  <Link to={item.link} style={{ textDecoration: "none" }}>
+                    <img src={item.image} alt={item.title} className="img-fluid" />
+                    <div className="portfolio-caption">
+                      <span className="portfolio-number">{index + 1}.</span>
+                      {item.title}
+                    </div>
+                  </Link>
                 </div>
               </div>
             ))}
           </div>
         </div>
 
-        {/* Trusted By - Marquee */}
-        <div className="my-5 py-5 px-3 rounded" style={{ backgroundColor: "#f0f4f9" }} data-aos="zoom-in">
+        {/* Logo Marquee Section */}
+        <div className="my-5 py-5 px-3 rounded" style={{ backgroundColor: "#f0f4f9", overflow: "hidden" }} data-aos="zoom-in">
           <h3 className="text-center mb-4" style={{ color: "#1f2a44", fontWeight: "600" }}>Trusted By</h3>
-          <Marquee gradient={false} speed={50} pauseOnHover={true}>
+          <Marquee gradient={false} speed={50} pauseOnHover={false} direction="left">
             {[client1, client2, client3, client4, client5, client6, client7, client8, client9, client10, client11, client12].map((logo, i) => (
-              <img key={i} src={logo} alt={`Client ${i + 1}`} className="marquee-logo" style={logoStyle} />
+              <img
+                key={i}
+                src={logo}
+                alt={`Client ${i + 1}`}
+                className="marquee-logo"
+                style={{
+                  height: "120px",
+                  margin: "0 40px",
+                  objectFit: "contain",
+                  transition: "transform 0.4s ease",
+                }}
+              />
             ))}
           </Marquee>
         </div>

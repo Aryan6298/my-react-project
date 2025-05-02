@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import aboutImg1 from '../assets/image01.png';
-import aboutImg2 from '../assets/image02.png';
+import aboutImg2 from '../assets/001.jpg';
 import aboutImg3 from '../assets/about-image.jpg';
 import 'bootstrap/dist/css/bootstrap.min.css';
 

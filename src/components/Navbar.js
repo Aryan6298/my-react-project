@@ -82,7 +82,7 @@ const NavigationBar = () => {
             </NavLink>
           </Nav>
 
-          
+            
         </Container>
       </Navbar>
     </>
